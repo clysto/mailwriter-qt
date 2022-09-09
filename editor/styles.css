@@ -1,0 +1,12 @@
+.ck-editor__editable[role='textbox'] {
+  min-height: calc(100vh - 40px);
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: auto;
+  font-family: sans-serif;
+}

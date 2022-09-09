@@ -2,27 +2,33 @@
 #define MAILWRITER_QT_MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtWebEngineWidgets>
+
 #include "api.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow {
-Q_OBJECT
+  Q_OBJECT
 
-public slots:
+ public slots:
 
-    void sendMail();
+  void sendMail();
 
-public:
-    MainWindow(Api *api, QWidget *parent = nullptr);
+ public:
+  MainWindow(Api *api, QWidget *parent = nullptr);
 
-    ~MainWindow();
+  ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
-    Api *api;
+ private:
+  Ui::MainWindow *ui;
+  QWebEngineView *webview;
+  QWebChannel *channel;
+  Api *api;
 };
 
-#endif //MAILWRITER_QT_MAINWINDOW_H
+#endif  // MAILWRITER_QT_MAINWINDOW_H

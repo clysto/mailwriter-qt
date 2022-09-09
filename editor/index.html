@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CKEditor 5 ClassicEditor build</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body data-editor="ClassicEditor" data-collaboration="false" data-revision-history="false">
+    <div class="editor"></div>
+    <script src="./ckeditor/ckeditor.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector('.editor'), {
+        licenseKey: '',
+      })
+        .then((editor) => {
+          window.editor = editor;
+        })
+        .catch((error) => {
+          console.error('Oops, something went wrong!');
+          console.error(
+            'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
+          );
+          console.warn('Build id: qivzurqaom2y-77vv46qigcu2');
+          console.error(error);
+        });
+      function getContent() {
+        return window.editor.getData();
+      }
+    </script>
+  </body>
+</html>
